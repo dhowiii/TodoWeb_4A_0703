@@ -141,15 +141,18 @@
       function saveEdit() {
         const newText = inputEdit.value.trim();
         const newDate = inputEditDate.value;
+        
+        // Simpan jika ada teks (wajib ada teks)
         if (newText) {
           text = newText;
           date = newDate;
           pText.textContent = text;
           pDate.textContent = newDate ? new Date(newDate).toLocaleDateString('id-ID') : '-';
           li.dataset.date = newDate;
+          saveTodoToStorage();
         }
+        
         li.replaceChild(textContainer, editContainer);
-        saveTodoToStorage();
       }
 
       function cancelEdit() {
@@ -174,7 +177,6 @@
 
       btnSave.addEventListener('click', saveEdit);
       btnCancel.addEventListener('click', cancelEdit);
-      inputEdit.addEventListener('blur', saveEdit);
     }
 
     function saveTodoToStorage() {

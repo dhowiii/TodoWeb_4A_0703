@@ -130,7 +130,6 @@ h3 {
 }
 
 .edit-input {
-  appearance: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(0, 0, 0, 0.3);
   color: var(--text);
@@ -139,6 +138,29 @@ h3 {
   outline: none;
   font-size: 14px;
   transition: border-color 120ms ease, box-shadow 120ms ease;
+  width: 100%;
+}
+
+.edit-input[type="text"] {
+  appearance: none;
+}
+
+.edit-input[type="date"] {
+  appearance: none;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.edit-input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.7;
+  filter: invert(1);
+}
+
+.edit-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
 }
 
 .edit-input:focus {
