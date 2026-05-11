@@ -37,7 +37,7 @@ body {
   gap: 24px;
   padding: 48px 24px 24px;
 }
-
+//style tulisan berjalan agar di atas
 marquee {
   width: min(720px, 100%);
   font-size: 1.5rem;
