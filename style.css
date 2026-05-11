@@ -246,7 +246,7 @@ h3 {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
   border-color: rgba(96, 165, 250, 0.55);
 }
-
+/* button tambah*/
 #btnTambahTodo2:hover {
   opacity: 0.95;
   color: red;
