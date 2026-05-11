@@ -1,0 +1,246 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b1220;
+  --card: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.16);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+
+  --primary: #60a5fa;
+  --primary-2: #2563eb;
+
+  --success: #34d399;
+  --danger: #fb7185;
+  --warning: #fbbf24;
+
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 20% 10%, #ae0cc4 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 30%, rgba(230, 32, 32, 0.35) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg), #e1e2e7);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  padding: 48px 24px 24px;
+}
+
+marquee {
+  width: min(720px, 100%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--text);
+}
+
+.card {
+  width: min(720px, 100%);
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  letter-spacing: 0.2px;
+  align-items: center;
+}
+
+h3 {
+  margin: 18px 0 10px;
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Form */
+#formtodo {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.6fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+
+#formtodo input[type="text"] {
+  width: 100%;
+}
+
+#formtodo input,
+#formtodo select {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 12px;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+}
+
+#formtodo input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+#formtodo input:focus,
+#formtodo select:focus {
+  border-color: rgba(96, 165, 250, 0.8);
+  box-shadow: 0 0 0 4px rgba(157, 175, 77, 0.18);
+}
+
+/* Buttons */
+.btn {
+  border: 1px solid rgba(141, 118, 118, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease,
+    opacity 120ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.btn:active {
+  transform: translateY(0px);
+}
+
+/* Specific buttons */
+#btnTambahTodo2 {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  border-color: rgba(96, 165, 250, 0.55);
+}
+
+#btnTambahTodo2:hover {
+  opacity: 0.95;
+  color: red;
+}
+
+.btn-status {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+
+
+.btn-delete {
+  border-color: rgba(24, 36, 212, 0.5);
+  color: rgba(255, 255, 255, 0.95);
+}
+.btn-delete:hover {
+  border-color: rgba(228, 30, 59, 0.5);
+  color: rgba(240, 235, 235, 0.95);
+  background-color: crimson;
+}
+
+/* List */
+#listTugas2 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.12);
+  margin-bottom: 10px;
+}
+
+.todo-item:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.todo-text {
+  font-weight: 750;
+  word-break: break-word;
+}
+
+.todo-status {
+  justify-self: end;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.9);
+  min-width: 130px;
+  text-align: center;
+}
+
+.todo-item button.btn {
+  justify-self: end;
+}
+
+/* Layout tweak: move buttons into a second row */
+.todo-item {
+  grid-template-columns: 1fr;
+}
+
+.todo-item > .todo-text {
+  grid-column: 1 / -1;
+}
+
+.todo-item > .todo-status {
+  justify-self: start;
+}
+
+.todo-item > button.btn {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+@media (min-width: 600px) {
+  .todo-item {
+    grid-template-columns: 1fr auto;
+    grid-auto-flow: row;
+  }
+
+  .todo-item > .todo-status {
+    justify-self: end;
+  }
+
+  .todo-item > button.btn {
+    margin-top: 0;
+  }
+
+  .todo-item {
+    grid-template-areas: "text status" "btn status";
+  }
+
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+  #formtodo {
+    grid-template-columns: 1fr;
+  }
+}
+
