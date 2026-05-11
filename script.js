@@ -24,7 +24,7 @@
   function saveTodos(todos) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
   }
-
+  //membuat todo list
   function createTodoItem({ id, text, date = '', status = 'Belum' }) {
     const li = document.createElement('li');
     li.className = 'todo-item';
