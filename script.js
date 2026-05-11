@@ -58,7 +58,7 @@
     btnEdit.className = 'btn btn-edit';
     btnEdit.type = 'button';
     btnEdit.textContent = 'Edit';
-
+    //tombol hapus/delete
     const btnDelete = document.createElement('button');
     btnDelete.className = 'btn btn-delete';
     btnDelete.type = 'button';
