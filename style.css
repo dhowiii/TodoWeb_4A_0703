@@ -45,7 +45,7 @@ marquee {
   letter-spacing: 0.6px;
   color: var(--text);
 }
-
+//menambahkan card
 .card {
   width: min(720px, 100%);
   background: var(--card);
