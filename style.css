@@ -146,6 +146,50 @@ h3 {
   box-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
 }
 
+.edit-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edit-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.edit-button-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-save {
+  flex: 1;
+  border-color: rgba(52, 211, 153, 0.5) !important;
+  background: rgba(52, 211, 153, 0.15) !important;
+  color: var(--success) !important;
+}
+
+.btn-save:hover {
+  background: rgba(52, 211, 153, 0.25) !important;
+  border-color: var(--success) !important;
+}
+
+.btn-cancel {
+  flex: 1;
+  border-color: rgba(251, 113, 133, 0.5) !important;
+  background: rgba(251, 113, 133, 0.15) !important;
+  color: var(--danger) !important;
+}
+
+.btn-cancel:hover {
+  background: rgba(251, 113, 133, 0.25) !important;
+  border-color: var(--danger) !important;
+}
+
 #formtodo input:focus,
 #formtodo select:focus {
   border-color: rgba(96, 165, 250, 0.8);

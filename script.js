@@ -89,18 +89,49 @@
       const editContainer = document.createElement('div');
       editContainer.className = 'edit-container';
 
+      const fieldGroup1 = document.createElement('div');
+      fieldGroup1.className = 'edit-field-group';
+      const label1 = document.createElement('label');
+      label1.textContent = 'Kegiatan:';
+      label1.className = 'edit-label';
       const inputEdit = document.createElement('input');
       inputEdit.type = 'text';
       inputEdit.value = pText.textContent;
       inputEdit.className = 'edit-input';
+      fieldGroup1.appendChild(label1);
+      fieldGroup1.appendChild(inputEdit);
 
+      const fieldGroup2 = document.createElement('div');
+      fieldGroup2.className = 'edit-field-group';
+      const label2 = document.createElement('label');
+      label2.textContent = 'Tanggal:';
+      label2.className = 'edit-label';
       const inputEditDate = document.createElement('input');
       inputEditDate.type = 'date';
       inputEditDate.value = date;
       inputEditDate.className = 'edit-input';
+      fieldGroup2.appendChild(label2);
+      fieldGroup2.appendChild(inputEditDate);
 
-      editContainer.appendChild(inputEdit);
-      editContainer.appendChild(inputEditDate);
+      const buttonGroup = document.createElement('div');
+      buttonGroup.className = 'edit-button-group';
+      
+      const btnSave = document.createElement('button');
+      btnSave.type = 'button';
+      btnSave.className = 'btn btn-save';
+      btnSave.textContent = '✓ Simpan';
+
+      const btnCancel = document.createElement('button');
+      btnCancel.type = 'button';
+      btnCancel.className = 'btn btn-cancel';
+      btnCancel.textContent = '✕ Batal';
+
+      buttonGroup.appendChild(btnSave);
+      buttonGroup.appendChild(btnCancel);
+
+      editContainer.appendChild(fieldGroup1);
+      editContainer.appendChild(fieldGroup2);
+      editContainer.appendChild(buttonGroup);
 
       li.replaceChild(editContainer, textContainer);
 
@@ -121,11 +152,15 @@
         saveTodoToStorage();
       }
 
+      function cancelEdit() {
+        li.replaceChild(textContainer, editContainer);
+      }
+
       inputEdit.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
           saveEdit();
         } else if (e.key === 'Escape') {
-          li.replaceChild(textContainer, editContainer);
+          cancelEdit();
         }
       });
 
@@ -133,10 +168,12 @@
         if (e.key === 'Enter') {
           saveEdit();
         } else if (e.key === 'Escape') {
-          li.replaceChild(textContainer, editContainer);
+          cancelEdit();
         }
       });
 
+      btnSave.addEventListener('click', saveEdit);
+      btnCancel.addEventListener('click', cancelEdit);
       inputEdit.addEventListener('blur', saveEdit);
     }
 
