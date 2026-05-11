@@ -20,7 +20,7 @@
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   --radius: 16px;
 }
-
+//styling body
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
